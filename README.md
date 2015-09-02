@@ -3,7 +3,6 @@
 
 `<juicy-iframe>` is a custom element that lets you stamp inline or external HTML into an iframe.
 It also provides simple data binding, that works for native JS/HTML as well as for Polymer's `dom-bind`.
-See [README.md](https://github.com/Juicy/juicy-iframe">) for more information.
 
 ## Demo/Examples
 
@@ -43,8 +42,8 @@ Or [download as ZIP](https://github.com/Juicy/juicy-iframe/archive/gh-pages.zip)
 
 Attribute    | Options           | Default     | Description
 ---          | ---               | ---         | ---
-`content`    | *string*		     | `""`	       | Safe HTML code, or path (starts with `/` or `./`) to partial to be loaded.
-`model`      | *string*|*Object* | `undefined` | Data model to attach to stamped iframe.
+`content`    | *String*		     | `""`	       | Safe HTML code, or path (starts with `/` or `./`) to partial to be loaded.
+`model`      | *String* or *Object* | `undefined` | Data model to attach to stamped iframe.
 
 ## Contributing
 
