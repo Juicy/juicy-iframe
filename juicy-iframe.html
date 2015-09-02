@@ -1,0 +1,75 @@
+<!--
+juicy-iframe custom element to stamp HTML given as string or from given file into an iframe
+by Juicy
+MIT license
+https://github.com/Juicy/juicy-iframe
+-->
+<script>
+    (function() {
+        var JuicyIframePrototype = Object.create((HTMLTemplateElement || HTMLElement).prototype);
+
+        /**
+         * Import given file, or source as iframe.
+         * @public only for debugging.
+         * @return {imported-template}        self
+         */
+        JuicyIframePrototype.loadTemplate_ = function() {
+            var src, srcdoc, iframe;
+            var val = this.getAttribute('content');
+            if (val === null) {
+                return val;
+            }
+            this.clear();
+            iframe = this.iframe = document.createElement('iframe');
+            iframe.name = "a";
+            iframe.model={a:"b"};
+            if (val && (val.indexOf('/') === 0 || val.indexOf('./') === 0)) {
+                iframe.src = val;
+            } else {
+                iframe.srcdoc = val;// encodeURI(val);
+            }
+            this.attributeChangedCallback("model", undefined, this.model || this.getAttribute("model"));
+            this.parentNode.insertBefore(iframe, this.nextSibling);
+            return this;
+        };
+        /**
+         * Remove stamped content.
+         */
+        JuicyIframePrototype.clear = function() {
+            return this.iframe && this.iframe.parentNode.removeChild(this.iframe);
+        };
+
+        JuicyIframePrototype.isAttached = false;
+        JuicyIframePrototype.attachedCallback = function() {
+            this.isAttached = true;
+            this.loadTemplate_();
+        };
+        JuicyIframePrototype.detachedCallback = function() {
+            this.isAttached = false;
+            this.clear();
+        };
+        JuicyIframePrototype.attributeChangedCallback = function(name, oldVal, newVal) {
+            if(this.isAttached){
+                switch(name){
+                    case "model":
+                        if(typeof newVal === "string"){
+                            this.model = newVal ? JSON.parse(newVal) : null;
+                        } else {
+                            this.model = newVal;
+                        }
+                        this.iframe.model = this.model;
+                        break;
+                    case "content":
+                        this.loadTemplate_();
+                        break;
+                }
+            }
+        };
+
+        document.registerElement('juicy-iframe', {
+            prototype: JuicyIframePrototype,
+            extends: "template"
+        });
+
+    })();
+</script>

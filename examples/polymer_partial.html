@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>&lt;imported-template&gt; from simple partial</title>
+    <script src="../../webcomponentsjs/webcomponents.js"></script>
+
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../juicy-iframe.html">
+
+    <link rel="stylesheet" href="http://juicy.github.io/juicy-tile-list/examples/github-markdown.css">
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            color: #333;
+            width: 80%;
+            margin: 2em auto;
+        }
+        .markdown-body{
+            overflow: auto;
+        }
+        textarea{
+            width: 100%;
+            height: 11em;
+        }
+    </style>
+</head>
+
+<body class="markdown-body">
+    <template id="test" is="dom-bind">
+        <h1>Fancy inline partial within Polymer's dom-bind</h1>
+        <h3>iframe from file</h3>
+        <pre><code>&lt;template is="juicy-iframe" content$="{{model.subpage.partial_path}}" model="{{model.subpage.model}}&gt;&lt;/template&gt;</code></pre>
+        <template is="juicy-iframe" content$="{{model.subpage.partial_path}}" model="{{model.subpage.model}}"></template>
+
+        <h3>iframe from string</h3>
+        <pre><code>&lt;template is="juicy-iframe"
+            content$="{{model.subpage.partial_markup}}" model="{{model.subpage.model}}"&gt;&lt;/template&gt;</code></pre>
+        <template is="juicy-iframe"
+            content$="{{model.subpage.partial_markup}}" model="{{model.subpage.model}}">
+        </template>
+        <h3>Code (live)</h3>
+        <textarea value="{{model.subpage.partial_markup::input}}"></textarea>
+    </template>
+
+    <script>
+        var model = {
+            subpage : {
+                partial_path: "./partial_that_requires_model.html",
+                partial_markup: "<h1>Inline markup</h1><"+
+                "script>"+
+                    "console.info('inlinemarkup, that uses given model, `this.frameElement.model`', this.frameElement.model);</"+
+                "script>",
+                model: {
+                    "data": {
+                        "given": "in main document"
+                    }
+                }
+            }
+        };
+        document.getElementById('test').model = model;
+    </script>
+
+
+</body>
+
+</html>

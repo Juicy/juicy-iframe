@@ -1,0 +1,27 @@
+{
+  "name": "juicy-iframe",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Juicy/juicy-iframe",
+  "authors": [
+    "Tomek Wytrebowicz <tomalecpub@gmail.com>"
+  ],
+  "description": "`<juicy-iframe>` is a custom element that lets you stamp inline or external HTML into an iframe. It also provides simple data binding, that works for native JS/HTML as well as for Polymer's `dom-bind`.",
+  "main": "./juicy-iframe.html",
+  "license": "MIT",
+  "devDependencies": {
+    "polymer": "Polymer/polymer#~1.1.0",
+  },
+  "keywords": [
+    "iframe",
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "examples",
+    "preview.png"
+  ]
+}

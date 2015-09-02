@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>&lt;imported-template&gt; from simple partial</title>
+    <script src="../../webcomponentsjs/webcomponents.js"></script>
+
+    <link rel="import" href="../juicy-iframe.html">
+
+    <link rel="stylesheet" href="http://juicy.github.io/juicy-tile-list/examples/github-markdown.css">
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            color: #333;
+            width: 80%;
+            margin: 2em auto;
+        }
+    </style>
+</head>
+
+<body class="markdown-body">
+    <h3>iframe from file</h3>
+    <pre><code>&lt;template is="juicy-iframe" content="./partial.html"&gt;&lt;/template&gt;</code></pre>
+    <template is="juicy-iframe" content="./partial.html"></template>
+
+    <h3>iframe from string</h3>
+    <pre><code>&lt;template is="juicy-iframe" content="&amp;lt;p&amp;gt;Content from &amp;lt;strong&amp;gt;inline&amp;lt;/strong&amp;gt; markup given in attribute&amp;lt;/p&amp;gt;"&gt;&lt;/template&gt;</code></pre>
+    <template is="juicy-iframe"
+        content="&lt;p&gt;Content from &lt;strong&gt;inline&lt;/strong&gt; markup given in attribute&lt;/p&gt;">
+    </template>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "juicy-html",
+  "version": "0.0.1",
+  "description": "`<juicy-iframe>` is a custom element that lets you stamp inline or external HTML into an iframe. It also provides simple data binding, that works for native JS/HTML as well as for Polymer's `dom-bind`.",
+  "homepage": "https://github.com/Juicy/juicy-html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Juicy/juicy-html.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Juicy/juicy-html/issues"
+  },
+  "author": {
+    "name": "Tomek Wytrębowicz"
+  },
+  "main": "./juicy-html.html",
+  "keywords": [
+    "iframe",
+    "web-components"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-watch": "~0.6.1"
+  }
+}
