@@ -13,7 +13,7 @@ It also provides simple data binding, that works for native JS/HTML as well as f
 Install the component using [Bower](http://bower.io/):
 
 ```sh
-$ bower install Juicy/juicy-iframe --save
+$ bower install juicy-iframe --save
 ```
 
 Or [download as ZIP](https://github.com/Juicy/juicy-iframe/archive/gh-pages.zip).
