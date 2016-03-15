@@ -9,7 +9,7 @@
   "main": "./juicy-iframe.html",
   "license": "MIT",
   "devDependencies": {
-    "polymer": "Polymer/polymer#~1.1.0",
+    "polymer": "Polymer/polymer#~1.1.0"
   },
   "keywords": [
     "iframe",
