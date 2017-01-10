@@ -16,7 +16,7 @@ Install the component using [Bower](http://bower.io/):
 $ bower install juicy-iframe --save
 ```
 
-Or [download as ZIP](https://github.com/Juicy/juicy-iframe/archive/gh-pages.zip).
+Or [download as ZIP](https://github.com/Juicy/juicy-iframe/archive/master.zip).
 
 ## Usage
 
